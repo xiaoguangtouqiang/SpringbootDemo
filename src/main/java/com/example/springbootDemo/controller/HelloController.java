@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     @RequestMapping("/hello")
-    public User index() {
-        User user = new User();
-        user.setPassword("ssssss");
-        user.setUserName("gggggg");
-        return user;
+    public String index() {
+        return "Hello World";
     }
 }
