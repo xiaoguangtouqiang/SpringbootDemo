@@ -34,5 +34,4 @@ public class SpringbootDemoApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Hello World")));
     }
-
 }
