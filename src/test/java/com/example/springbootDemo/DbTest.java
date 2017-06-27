@@ -24,7 +24,8 @@ public class DbTest {
         user.setAge("18");
         user.setName("di");
         User saveUser = userSerivce.saveUser(user);
-        System.out.print("saveUser:"+saveUser.toString());
+        User result = userSerivce.queryUser("di");
+        System.out.print("saveUser:"+result.toString());
     }
 
 }

@@ -7,7 +7,6 @@ import javax.persistence.*;
  * Created by Administrator on 2017/6/24 0024.
  */
 @Entity
-@Table(name="rx_user",schema="test")
 public class User {
 
     @Id

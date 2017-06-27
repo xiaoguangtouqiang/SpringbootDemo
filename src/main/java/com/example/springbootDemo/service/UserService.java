@@ -22,8 +22,9 @@ public class UserService {
         jdbcTemplate.update("insert into USER(NAME, AGE) values(?, ?)", name, age);
     }
 
-    public void queryUser(String name) {
-        userRepository.findByName(name);
+    public User queryUser(String name) {
+        User user = userRepository.findByName(name);
+        return user;
     }
 
     public User saveUser(User user) {
