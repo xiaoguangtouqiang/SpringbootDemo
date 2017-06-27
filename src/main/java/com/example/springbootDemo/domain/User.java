@@ -1,25 +1,57 @@
 package com.example.springbootDemo.domain;
 
+
+import javax.persistence.*;
+
 /**
- * Created by Administrator on 2017/6/19 0019.
+ * Created by Administrator on 2017/6/24 0024.
  */
+@Entity
+@Table(name="rx_user",schema="test")
 public class User {
-    private String userName;
-    private String password;
 
-    public String getUserName() {
-        return userName;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
+
+    @Column(nullable = false,name="name")
+    private String name;
+
+    @Column(nullable = false,name="age")
+    private String age;
+
+
+    public Long getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                '}';
     }
 }
