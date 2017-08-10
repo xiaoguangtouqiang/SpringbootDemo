@@ -21,7 +21,7 @@ public class DbTest {
     @Test
     public void test() throws Exception {
         User user = new User();
-        user.setAge("18");
+        user.setAge("181");
         user.setName("di");
         User saveUser = userSerivce.saveUser(user);
         User result = userSerivce.queryUser("di");
