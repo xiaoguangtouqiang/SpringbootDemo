@@ -1,5 +1,5 @@
 var stompClient = null;
-
+connect();
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
@@ -34,7 +34,8 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/app/github", {},$("#name").val());
+    console.log("send hello-socket");
+    stompClient.send("/app/hello-socket", {},$("#name").val());
 }
 
 function showGreeting(message) {

@@ -1,13 +1,13 @@
 package com.example.springbootDemo.dto;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+        import com.fasterxml.jackson.annotation.JsonSubTypes;
+        import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  * Created by Administrator on 2017/7/16 0016.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
-@JsonSubTypes({@JsonSubTypes.Type(value = Lion.class), @JsonSubTypes.Type(value = Elephant.class)})
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY,property = "abcde")
+@JsonSubTypes({@JsonSubTypes.Type(value=Lion.class), @JsonSubTypes.Type(value = Elephant.class)})
 public abstract class Animal {
     String name;
     String type;

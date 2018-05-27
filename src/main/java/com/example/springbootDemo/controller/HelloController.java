@@ -1,6 +1,7 @@
 package com.example.springbootDemo.controller;
 
 import com.example.springbootDemo.domain.MyException;
+import com.example.springbootDemo.service.aspect.PermissionCheck;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,8 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloController {
+
+
     @RequestMapping("/hello")
+    @PermissionCheck("user:update")
     public String index() {
+        System.out.printf("hello controller");
         return "Hello WorldCOMPANY";
     }
 
